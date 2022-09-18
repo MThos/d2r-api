@@ -1,0 +1,82 @@
+html, body {
+  background: #0c044d;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #03001e, #520585, #520585, #03001e);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #03001e, #3b0360, #3b0360, #03001e); /* IE 10+/ Edge, Firefox 16+, Chrome 26+, Safari 7+ */
+  color: white;
+  font-family: 'Nanum Gothic Coding', 'Roboto', sans-serif;
+}
+
+.App {
+  text-align: center;
+}
+
+#api-key {
+  background: rgb(29, 29, 29);
+  border: 4px solid black;
+  color: white;
+  font-size: 1.4rem;
+  height: 50px;
+  text-align: center;
+  width: 800px;
+}
+
+#api-list {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.api-list-item {
+  align-items: center;
+  background: rgb(29, 29, 29);
+  border: 4px solid black;
+  display: flex;
+  flex-direction: row;
+  font-size: 1.1rem;
+  height: 30px;
+  gap: 30px;
+  padding: 10px;
+  width: 1100px;
+}
+
+#api-list a {
+  color: white;
+  text-decoration: none;
+}
+
+.api-list-item:hover {
+  background: rgb(227, 227, 227);
+  color: black;
+}
+
+.api-list-item-left {
+  text-align: right;
+  width: 150px;
+}
+
+.api-list-item-right {
+  text-align: left;
+}
+
+#api-textbox {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  justify-content: center;
+}
+
+#copy {
+  height: 40px;
+  width: 40px;
+}
+
+#copy:hover {
+  cursor: pointer;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  margin: 50px 0 15px 0;
+}
