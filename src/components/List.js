@@ -17,18 +17,18 @@ const List = () => {
   ];
 
   return (
-    <main>
-      <Subtitle title="API KEY" />
+    <main className="fade-in">
+      <Subtitle title="KEY" />
       <div id="api-textbox">
         <Textbox api_key={API_KEY[0]} />
-        <CopyIcon api_key={API_KEY[0]} tooltip="copy to clipboard" />
+        <CopyIcon api_key={API_KEY[0]} tooltip="copy key" />
       </div>
-      <Subtitle title="API ENDPOINTS" />
+      <Subtitle title="ENDPOINTS" />
       <div id="api-list">
       {
         API_LIST.map((key) => (
           <a key={key[0]} href={`http://${key[1] + API_KEY[0]}`} target="_blank" rel="noreferrer">
-            <div className="api-list-item">
+            <div className="api-list-item" data-tip={key[0]} data-border="true" data-place="bottom" data-background-color="black">
               <div className="api-list-item-left">
                 {key[0]}
               </div>
