@@ -14,22 +14,48 @@ html, body {
   text-align: center;
 }
 
+#api-history {
+  background: rgb(29, 29, 29);
+  border: 4px solid black;
+  border-radius: 10px;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 80px;
+  margin: 10px auto 0 auto;
+  padding: 10px 40px;
+  text-shadow: 2px 2px 2px black;
+  width: fit-content;
+}
+
+.api-history-time {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+.api-history-calls {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
 #api-key {
   background: rgb(29, 29, 29);
-  border: 2px solid black;
+  border: 4px solid black;
   color: white;
   font-size: 1rem;
   height: 40px;
   letter-spacing: 1.4px;
   text-align: center;
-  width: 700px;
+  width: 750px;
 }
 
 #api-list {
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 10px;
 }
 
 #api-list a {
@@ -40,7 +66,7 @@ html, body {
 .api-list-item {
   align-items: center;
   background: rgb(29, 29, 29);
-  border: 2px solid black;
+  border: 4px solid black;
   display: flex;
   flex-direction: row;
   font-size: 1.1rem;
@@ -72,6 +98,18 @@ html, body {
   justify-content: center;
 }
 
+.auth0-btn {
+  border: 2px solid black;
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 5px 10px;
+  text-transform: uppercase;
+}
+
+.bold {
+  font-weight: 700;
+}
+
 #copy {
   height: 40px;
   width: 40px;
@@ -79,6 +117,12 @@ html, body {
 
 #copy:hover {
   cursor: pointer;
+}
+
+#endpoint {
+  align-items: center;
+  display: flex;
+  gap: 5px;
 }
 
 .fade-in {
@@ -118,6 +162,7 @@ footer {
   flex-shrink: 0;
   font-size: 1.2rem;
   font-weight: 700;
+  margin-top: 100px;
   margin-bottom: 5px;
   text-shadow: 2px 2px 2px black;
 }
@@ -145,13 +190,83 @@ header {
 }
 
 header div {
-  width: 250px;
+  width: 350px;
 }
 
-#login-icon {
-  height: 40px;
-  cursor: pointer;
-  width: 40px;
+#header-icon a {
+  color: inherit;
+}
+
+.legal {
+  background: black;
+  border: 2px solid white;
+  border-radius: 5px;
+  line-height: 1.3rem;
+  margin: 10px 350px 10px 350px;
+  padding: 20px 20px 10px 20px;
+  text-align: left;
+}
+
+.legal a {
+  color: #f54c19;
+  text-decoration: none;
+}
+
+.legal a:hover {
+  font-weight: 600;
+}
+
+.legal-body {
+  font-size: 1rem;
+  padding-bottom: 10px;
+}
+
+.legal-body-header {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.legal-date {
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 10px 0 30px 0;
+  text-align: center;
+}
+
+.legal-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-top: 20px;
+}
+
+.legal-header {
+  font-size: 2.3rem;
+  font-weight: 600;
+  margin: 0 auto;
+  text-shadow: 2px 2px 2px black;
+  width: fit-content;
+}
+
+.legal-sub-header {
+  border-bottom: 2px solid black;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  width: fit-content;
+}
+
+#loading-icon {
+  animation: rotation 5s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-359deg);
+  }
 }
 
 main {
@@ -164,33 +279,36 @@ main {
   width: 50px;
 }
 
-#signup-icon {
-  height: 40px;
-  cursor: pointer;
-  width: 40px;
-}
-
 .subtitle {
   font-size: 1.5rem;
   font-weight: 700;
   margin: 50px auto 15px auto;
-  text-shadow: 4px 4px 4px black;
+  text-shadow: 2px 2px 2px black;
 }
 
 #title {
   font-size: 2.5rem;
   font-weight: 700;
   margin-top: 5px;
-  text-shadow: 4px 4px 2px black;
+  text-shadow: 2px 2px 2px black;
+}
+
+#title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#user {
+  font-size: 1rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 2px black;
 }
 
 #user-login {
   align-items: center;
   display: flex;
-  flex-direction: row;
-  font-size: 1.2rem;
-  font-weight: 700;
-  gap: 50px;
+  flex-direction: column;
+  gap: 15px;
   margin: 10px 0;
   text-transform: uppercase;
 }
