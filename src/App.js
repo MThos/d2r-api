@@ -11,6 +11,7 @@ import LoopIcon from '@mui/icons-material/Loop';
 import Terms from './components/Terms';
 import Privacy from './components/Privacy';
 import Cookies from './components/Cookies';
+import LoggedOut from './components/LoggedOut';
 
 function App() {
   const { isAuthenticated, user, isLoading } = useAuth0();
@@ -51,8 +52,8 @@ function App() {
       <Header />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={isAuthenticated ? <List api_key={apiKey} /> : ""} />
-          <Route path="/endpoints" element={isAuthenticated ? <List api_key={apiKey} /> : ""} />
+          <Route path="/" element={isAuthenticated ? <List api_key={apiKey} /> : <LoggedOut />} />
+          <Route path="/endpoints" element={isAuthenticated ? <List api_key={apiKey} /> : <LoggedOut />} />
           <Route path="/cookies" element={<Cookies />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/privacy" element={<Privacy />} />
