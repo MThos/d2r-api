@@ -9,7 +9,7 @@ const CopyIcon = (props) => {
       data-background-color="black"
       src="images/copy.webp" 
       alt="copy to clipboard" 
-      onClick={() => {navigator.clipboard.writeText(props.api_key)}} />
+      onClick={() => {navigator.clipboard.writeText(props.copy_text)}} />
   )
 }
 
