@@ -1,7 +1,7 @@
 html, body {
   background: #c93f30;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to left, #000000, #6e1e15, #c93f30, #c93f30, #6e1e15, #000000);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #000000, #6e1e15, #c93f30, #c93f30, #6e1e15, #000000); /* IE 10+, Firefox 16+, Chrome 26+, Safari 7+ */
+  background: -webkit-linear-gradient(to left, #000000, #491610, #c93f30, #c93f30, #491610, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #000000, #491610, #c93f30, #c93f30, #491610, #000000); /* IE 10+, Firefox 16+, Chrome 26+, Safari 7+ */
   color: white;
   font-family: 'Nanum Gothic Coding', 'Roboto', sans-serif;
 }
@@ -12,6 +12,14 @@ html, body {
   letter-spacing: 1px;
   min-height: 98vh;
   text-align: center;
+}
+
+#api-example-img {
+  border: 4px solid black;
+  border-radius: 5px;
+  margin: 30px auto 0 auto;
+  height: auto;
+  width: 900px;
 }
 
 #api-history {
@@ -258,6 +266,18 @@ header div {
 
 #loading-icon {
   animation: rotation 5s infinite linear;
+}
+
+#logged-out-info-top {
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-shadow: 1px 1px 1px black;
+}
+
+#logged-out-info-bottom {
+  font-weight: 700;
+  margin-top: 10px;
+  text-shadow: 1px 1px 1px black;
 }
 
 @keyframes rotation {
