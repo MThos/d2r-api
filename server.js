@@ -3,9 +3,11 @@ const mongoose = require('mongoose');
 const axios = require('axios');
 const cors = require('cors');
 const app = express();
+
 require('dotenv').config();
 
 app.use(cors());
+
 
 // MONGODB CONNECTION
 const mongo_address = process.env.REACT_APP_MONGO_ADDR
@@ -30,24 +32,69 @@ try {
 // ACCESS KEYS
 app.get('/amazon', (req, res) => {
   const api_request = 'amazon';
-  access_allowed(req.query.api_key, api_request, res, req);
+  access_allowed(api_request, res, req);
 })
 
-function access_allowed(api_key, api_request, res, req) {
+app.get('/getapikey', (req, res) => {
+  get_api_key(res, req);
+})
+
+app.get('/history', (req, res) => {
+  call_history(res, req);
+})
+
+function call_history(res, req) {
+  try {
+    db.collection('access_log').countDocuments(
+      {
+        'api_key': req.query.api_key,
+        'success': true,
+        'timestamp': {
+          $gt: Date.now() - req.query.duration
+        }
+      }
+    ).then((counter) => {
+      //console.log(counter);
+      res.json(counter);
+    });
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+function get_api_key(res, req) {
+  const user_data = JSON.parse(req.query.user);
+  try {
+    db.collection('access_key').find(
+      {
+        'email': user_data.email
+      }
+    ).forEach((response) => {
+      if (response) {
+        //console.log(response);
+        res.json(response);
+      }
+    });
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+function access_allowed(api_request, res, req) {
   try {
     db.collection('access_key').countDocuments(
       {
-        'api_key': api_key
+        'api_key': req.query.api_key
       }
     )
     .then((counter) => {
       if (counter === 0) {
-        console.log(`Fail -> API request: ${api_request} -> API_KEY: ${api_key} -> Date: ${new Date().toUTCString()} -> Client: ${req.socket.remoteAddress}`);
-        access_log(api_key, api_request, req.socket.remoteAddress, false);
+        console.log(`Fail -> API request: ${api_request} -> API_KEY: ${req.query.api_key} -> Date: ${new Date().toUTCString()} -> Client: ${req.socket.remoteAddress}`);
+        access_log(req.query.api_key, api_request, req.socket.remoteAddress, false);
       } else {
-        console.log(`Success -> API request: ${api_request} -> API_KEY: ${api_key} -> Date: ${new Date().toUTCString()} -> Client: ${req.socket.remoteAddress}`);
-        access_key_update(api_key);
-        access_log(api_key, api_request, req.socket.remoteAddress, true);
+        console.log(`Success -> API request: ${api_request} -> API_KEY: ${req.query.api_key} -> Date: ${new Date().toUTCString()} -> Client: ${req.socket.remoteAddress}`);
+        access_key_update(req.query.api_key);
+        access_log(req.query.api_key, api_request, req.socket.remoteAddress, true);
         send_api_data(api_request, res);
       }
     });
@@ -95,7 +142,8 @@ function access_log(api_key, api_request, client, success) {
       {
         api_key: api_key, 
         api_request: api_request,
-        timestamp: new Date().toUTCString(),
+        datetimestamp: new Date().toUTCString(),
+        timestamp: Date.now(),
         client: client,
         success: success
       }
