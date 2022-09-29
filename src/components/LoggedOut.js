@@ -1,5 +1,4 @@
 import React from "react";
-import Subtitle from './Subtitle';
 
 const LoggedOut = () => {
   return (
@@ -8,7 +7,7 @@ const LoggedOut = () => {
         <p>This API contains information about &#8212; Diablo 2 Resurrected</p>
         <p>Endpoints &#8212; classes, skills, items, runewords, quests and more...</p>
         <br/>
-        <p>Signup to receive an API key &#8212; 20 requests per minute!</p>
+        <p>Signup to receive a free API key &#8212; 20 requests per minute!</p>
       </div>
       <div>
         <img id="api-example-img" src="images/amazon_example.png" alt="api example" />
