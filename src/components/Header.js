@@ -14,7 +14,7 @@ const Header = () => {
         <a href="/"><WebhookIcon id="main-icon" /></a>
       </div>
       <div>
-        <img src="images/d2r_logo_white_name.png" id="header-logo" />
+        <a href="/"><img src="images/d2r_logo_white_name.png" id="header-logo" /></a>
       </div>
       <div id="user-login">
         <div id="user">
