@@ -1,5 +1,4 @@
 import React from "react";
-import MainTitle from "./MainTitle";
 import LoginButton from './LoginButton';
 import LogoutButton from './LogoutButton';
 import WebhookIcon from '@mui/icons-material/Webhook';
@@ -14,7 +13,9 @@ const Header = () => {
       <div id="header-icon">
         <a href="/"><WebhookIcon id="main-icon" /></a>
       </div>
-      <MainTitle title="D2R API" />
+      <div>
+        <img src="images/d2r_logo_white_name.png" id="header-logo" />
+      </div>
       <div id="user-login">
         <div id="user">
         {
