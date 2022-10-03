@@ -223,7 +223,7 @@ const Terms = () => {
           <div className="legal-body">
               Questions about our Terms of Service can be sent to:  <a href="mailto:admin@leaguecensus.com">admin@leaguecensus.com</a>
           </div>
-      </div>=
+      </div>
     </div>
   );
 }
