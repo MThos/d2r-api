@@ -12,6 +12,7 @@ import Terms from './components/Terms';
 import Privacy from './components/Privacy';
 import Cookies from './components/Cookies';
 import LoggedOut from './components/LoggedOut';
+import NotFound from './components/NotFound';
 
 function App() {
   const { isAuthenticated, user, isLoading } = useAuth0();
@@ -57,6 +58,8 @@ function App() {
           <Route path="/cookies" element={<Cookies />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/contact" element={<div>CONTACT</div>} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
       <Footer />
