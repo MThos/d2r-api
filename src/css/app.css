@@ -10,22 +10,15 @@ html, body {
   display: flex;
   flex-direction: column;
   letter-spacing: 1px;
+  margin: 0 auto;
+  max-width: 1400px;
   min-height: 98vh;
   text-align: center;
-}
-
-#api-example-img {
-  border: 8px solid black;
-  border-radius: 15px;
-  margin: 0 auto;
-  height: auto;
-  width: 900px;
 }
 
 #api-history {
   background: rgb(29, 29, 29);
   border: 4px solid black;
-  border-radius: 10px;
   align-items: center;
   display: flex;
   flex-direction: row;
@@ -36,16 +29,16 @@ html, body {
   width: fit-content;
 }
 
+.api-history-calls {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
 .api-history-time {
   font-size: 1rem;
   font-weight: 700;
   margin-top: 5px;
-}
-
-.api-history-calls {
-  font-size: 2.2rem;
-  font-weight: 700;
-  margin-bottom: 5px;
 }
 
 #api-key {
@@ -63,7 +56,8 @@ html, body {
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
+  margin-top: 40px;
 }
 
 #api-list a {
@@ -104,6 +98,7 @@ html, body {
   flex-direction: row;
   gap: 5px;
   justify-content: center;
+  margin-top: 40px;
 }
 
 .auth0-btn {
@@ -131,6 +126,13 @@ html, body {
   align-items: center;
   display: flex;
   gap: 5px;
+}
+
+#endpoint-list {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .fade-in {
@@ -173,6 +175,7 @@ footer {
   margin-top: 100px;
   margin-bottom: 5px;
   text-shadow: 1px 1px 1px black;
+  text-transform: uppercase;
 }
 
 footer a {
@@ -186,7 +189,7 @@ footer ul {
   flex-direction: row;
   justify-content: center;
   list-style-type: none;
-  gap: 150px;
+  gap: 80px;
   margin: 0;
   padding-left: 0;
 }
@@ -207,17 +210,17 @@ header div {
 
 #header-logo {
   margin-top: 10px;
-  margin-bottom: 60px;
+  margin-bottom: 10px;
   height: auto;
   width: 150px;
 }
 
 .legal {
   background: black;
-  border: 2px solid white;
+  border: 8px solid white;
   border-radius: 5px;
   line-height: 1.3rem;
-  margin: 10px 350px 10px 350px;
+  margin: 10px 150px 10px 150px;
   padding: 20px 20px 10px 20px;
   text-align: left;
 }
@@ -275,27 +278,41 @@ header div {
   animation: rotation 5s infinite linear;
 }
 
-#logged-out-info-top {
-  background: black;
-  border: 4px solid white;
-  border-radius: 5px;
-  font-size: 1.1rem;
-  font-weight: 700;
-  margin: 0 auto;
-  text-shadow: 1px 1px 1px black;
-  width: 750px;
+#logged-out {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-#logged-out-info-bottom {
+#logged-out-img {
   background: black;
-  border: 2px solid black;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-top: 10px solid black;
+  border-left: 10px solid black;
+  border-right: 10px solid black;
+  border-bottom: 10px solid black;
+  margin: 0 auto;
+  width: 900px;
+}
+
+#logged-out-img img {
+  height: auto;
+  width: 900px;
+}
+
+#logged-out-info-top {
+  background: black;
+  border: 10px solid white;
+  font-size: 1.2rem;
   font-weight: 700;
-  margin: 45px auto 0 auto;
-  padding: 10px;
+  padding: 5px 0;
   text-shadow: 1px 1px 1px black;
-  width: 400px;
+  width: 900px;
+}
+
+#logged-out-info-top p {
+  padding: 2px 0;
+  text-transform: uppercase;
 }
 
 @keyframes rotation {
@@ -315,6 +332,55 @@ main {
   height: 50px;
   margin-top: 5px;
   width: 50px;
+}
+
+#not-found {
+  background: black;
+  border: 8px solid white;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  justify-content: center;
+  margin: 30px auto 0 auto;
+  padding: 0 40px;
+  text-align: center;
+  text-transform: uppercase;
+  width: fit-content;
+}
+
+#not-found-img img {
+  height: auto;
+  width: 200px;
+}
+
+#not-found-title {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+#not-found-message {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+#not-found-email {
+  margin-top: 40px;
+}
+
+#not-found-email a {
+  font-size: 2rem;
+  color: #f54c19;
+  text-decoration: none;
+}
+
+#not-found-status {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+#not-found-status div {
+  padding: 10px 0;
 }
 
 .subtitle {
