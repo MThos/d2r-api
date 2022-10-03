@@ -1,6 +1,5 @@
 import React from "react";
 import Textbox from "./Textbox";
-import Subtitle from "./Subtitle";
 import CopyIcon from "./CopyIcon";
 import History from "./History";
 
@@ -16,26 +15,23 @@ const List = (props) => {
     ["Sorceress", "localhost:8000/sorceress?api_key="],
     ["Runes", "localhost:8000/runes?api_key="],
     ["Runewords", "localhost:8000/runewords?api_key="],
+    ["Gems", "localhost:8000/gems?api_key="],
     ["Uniques", "localhost:8000/uniques?api_key="],
     ["Sets", "localhost:8000/sets?api_key="],
     ["Normals", "localhost:8000/normals?api_key="],
     ["Exceptionals", "localhost:8000/exceptionals?api_key="],
-    ["Elites", "localhost:8000/elites?api_key="],
-    ["Gems", "localhost:8000/gems?api_key="]
+    ["Elites", "localhost:8000/elites?api_key="]
   ];
 
   return (
-    <main className="fade-in">
-      <Subtitle title="KEY" />
+    <main id="endpoint-list" className="fade-in">
+      <div id="api-history">
+        <History api_key={API_KEY ? API_KEY : ""} />
+      </div>
       <div id="api-textbox">
         <Textbox api_key={API_KEY ? API_KEY : "LOGIN TO ACCESS YOUR API KEY — OR SIGNUP FOR ACCESS"} />
         <CopyIcon copy_text={API_KEY ? API_KEY : ""} tooltip="copy key" />
       </div>
-      <Subtitle title="API CALLS" />
-      <div id="api-history">
-        <History api_key={API_KEY ? API_KEY : ""} />
-      </div>
-      <Subtitle title="ENDPOINTS" />
       <div id="api-list">
       {
         API_LIST.map((key) => (
