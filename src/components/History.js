@@ -52,28 +52,23 @@ const History = (props) => {
     <>
     <div>
       <div className="api-history-calls">{history_1m}</div>
-      <div className="bold">&#8212;</div>
-      <div className="api-history-time">1M</div>
+      <div className="api-history-time">1 MIN</div>
     </div>
     <div>
       <div className="api-history-calls">{history_1h}</div>
-      <div className="bold">&#8212;</div>
-      <div className="api-history-time">1H</div>
+      <div className="api-history-time">1 HR</div>
     </div>
     <div>
       <div className="api-history-calls">{history_1d}</div>
-      <div className="bold">&#8212;</div>
-      <div className="api-history-time">24H</div>
+      <div className="api-history-time">24 HR</div>
     </div>
     <div>
       <div className="api-history-calls">{history_7d}</div>
-      <div className="bold">&#8212;</div>
-      <div className="api-history-time">7D</div>
+      <div className="api-history-time">7 DAY</div>
     </div>
     <div>
       <div className="api-history-calls">{history_30d}</div>
-      <div className="bold">&#8212;</div>
-      <div className="api-history-time">30D</div>
+      <div className="api-history-time">30 DAY</div>
     </div>
     </>
   )
