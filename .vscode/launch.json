@@ -9,12 +9,12 @@
       "request": "launch",
       "name": "Launch Program",
       "runtimeExecutable": "${workspaceFolder}/node_modules/nodemon/bin/nodemon.js",
+      "program": "${workspaceFolder}/server.js",
       "skipFiles": [
-        "<node_internals>/**",
+        "<node_internals>/**/*.js",
         "${workspaceFolder}/node_modules/**/*.js",
         "${workspaceFolder}/lib/**/*.js"
       ],
-      "program": "${workspaceFolder}/server.js"
-    }
+    },
   ]
 }
