@@ -1,6 +1,7 @@
 import React from "react";
 import LoginButton from './LoginButton';
 import LogoutButton from './LogoutButton';
+import Image from "./Image";
 import WebhookIcon from '@mui/icons-material/Webhook';
 import { useAuth0 } from "@auth0/auth0-react";
 
@@ -14,7 +15,7 @@ const Header = () => {
         <a href="/"><WebhookIcon id="main-icon" /></a>
       </div>
       <div>
-        <a href="/"><img src="images/d2r_logo_white_name.png" id="header-logo" alt="d2r-api logo" /></a>
+        <a href="/"><Image id="header-logo" src="d2r_logo_white_name.webp" alt="d2r-api logo" /></a>
       </div>
       <div id="user-login">
         <div id="user-btn">
