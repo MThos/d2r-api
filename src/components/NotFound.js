@@ -7,7 +7,7 @@ const NotFound = () => {
         That Page Cannot Be Found
       </div>
       <div id="not-found-img">
-        <img src="images/404.png" alt="404 error" />
+        <img src="images/404.webp" alt="404 error" />
       </div>      
       <div id="not-found-message">
         <div>If you believe this is an error with our website &#8212; please contact us</div>
