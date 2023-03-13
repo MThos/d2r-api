@@ -29,19 +29,38 @@ try {
   console.log(error);
 }
 
-// ACCESS KEYS
 app.get('/amazon', (req, res) => {
   const api_request = 'amazon';
   access_allowed(api_request, res, req);
-})
+});
+
+app.get('/gems', (req, res) => {
+  const api_request = 'gems';
+  access_allowed(api_request, res, req);
+});
+
+app.get('/runes', (req, res) => {
+  const api_request = 'runes';
+  access_allowed(api_request, res, req);
+});
+
+app.get('/small-charms', (req, res) => {
+  const api_request = 'small_charms';
+  access_allowed(api_request, res, req);
+});
+
+app.get('/unique-charms', (req, res) => {
+  const api_request = 'unique_charms';
+  access_allowed(api_request, res, req);
+});
 
 app.get('/getapikey', (req, res) => {
   get_api_key(res, req);
-})
+});
 
 app.get('/history', (req, res) => {
   call_history(res, req);
-})
+});
 
 function call_history(res, req) {
   try {
@@ -59,6 +78,7 @@ function call_history(res, req) {
     });
   } catch (error) {
     console.log(error);
+    error_log(error);
   }
 }
 
@@ -77,6 +97,7 @@ function get_api_key(res, req) {
     });
   } catch (error) {
     console.log(error);
+    error_log(error);
   }
 }
 
@@ -100,23 +121,17 @@ function access_allowed(api_request, res, req) {
     });
   } catch (error) {
     console.log(error);
+    error_log(error);
   }
 }
 
-function send_api_data(api_request, res) {
+async function send_api_data(api_request, res) {
   try {
-    db.collection(api_request).find(
-      {
-        'name': api_request
-      }
-    ).forEach((response) => {
-      if (response) {
-        //console.log(response);
-        res.json(response);
-      }
-    });
+    const json_data = await db.collection(api_request).find({}, {projection:{_id: 0}}).toArray();
+    res.json(json_data);
   } catch (error) {
     console.log(error);
+    error_log(error);
   }
 }
 
@@ -133,6 +148,7 @@ function access_key_update(api_key) {
     );
   } catch (error) {
     console.log(error);
+    error_log(error);
   }
 }
 
@@ -148,6 +164,21 @@ function access_log(api_key, api_request, client, success) {
         success: success
       }
     );
+  } catch (error) {
+    console.log(error);
+    error_log(error);
+  }
+}
+
+function error_log(error) {
+  try {
+    db.collection('error_log').insertOne(
+      {
+        error: error.message,
+        datetimestamp: new Date().toUTCString(),
+        timestamp: Date.now(),
+      }
+    )
   } catch (error) {
     console.log(error);
   }
