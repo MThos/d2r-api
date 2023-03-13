@@ -9,7 +9,7 @@ const LoggedOut = () => {
         <p>Signup to receive a free API key &#8212; 20 requests per minute</p>
       </div>
       <div id="logged-out-img">
-        <img src="images/amazon_example.png" alt="api example" />
+        <img src="images/amazon_example.webp" alt="api example" />
       </div>
     </main>
   )
