@@ -6,7 +6,7 @@ const LoginButton = () => {
 
   return (
     <button className="auth0-btn" onClick={() => loginWithRedirect()}>
-      Login / Register
+      Login / Signup
     </button>
   );
 };
